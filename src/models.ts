@@ -1,8 +1,7 @@
 export enum accessOptions {
     administrator = "administrador",
     manager = "gerente",
-    employee = "funcionário",
-    undefined = "undefined",
+    employee = "funcionário"
   }
 
   export interface userType {

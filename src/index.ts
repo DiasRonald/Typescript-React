@@ -69,7 +69,7 @@ function createLine ({
   fullName,
   register = Math.random().toString(36).substring(7).toUpperCase(),
   active,
-  access = accessOptions.undefined,
+  access
 }: userType,
   ...address: string []): string {
 
@@ -89,7 +89,7 @@ function createLine ({
       </div>` : ''
       }
       <div class="card-footer bg-transparent border-success">
-        Acesso: ${access ? 'Não definido': access}
+        Acesso: ${access}
       </div>
     </div>`;
 }
