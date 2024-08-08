@@ -1,0 +1,31 @@
+{
+    "users": [
+    {
+        "fullName": "João Silva",
+        "register": "A98765",
+        "access": "Administrador",
+        "active": true
+    },
+
+    {
+        "fullName": "Ronald Dias",
+        "register": "A65865",
+        "access": "Gerente",
+        "active": true
+    },
+
+    {
+        "fullName": "Mércia Dias",
+        "register": "B69765",
+        "access": "Funcionário",
+        "active": false
+    },
+
+    {
+        "fullName": "Débora Pinheiro",
+        "register": "C97865",
+        "access": "Administrador",
+        "active": false
+    }
+    ]
+}
