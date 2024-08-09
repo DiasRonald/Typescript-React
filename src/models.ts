@@ -7,6 +7,6 @@ export enum accessOptions {
   export interface userType {
     fullName: string,
     register?: number | string,
-    access: accessOptions,
-    active: boolean
+    access?: accessOptions,
+    active?: boolean
   }
