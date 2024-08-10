@@ -1,10 +1,11 @@
 export enum accessOptions {
     administrator = "administrador",
     manager = "gerente",
-    employee = "funcionário"
+    employee = "funcionário",
+    undefined = "Não definido"
   }
 
-  export interface userType {
+  export interface UserType {
     fullName: string,
     register?: number | string,
     access?: accessOptions,
