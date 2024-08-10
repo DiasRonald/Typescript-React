@@ -5,7 +5,7 @@ export enum accessOptions {
     undefined = "Não definido"
   }
 
-  export interface UserType {
+  export interface User {
     fullName: string,
     register?: number | string,
     access?: accessOptions,

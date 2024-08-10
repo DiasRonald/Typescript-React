@@ -1,4 +1,5 @@
-import { accessOptions, UserType } from "../src/models";
+import { accessOptions, User } from "../src/models";
+import { Service } from "./service/service";
 
 class UserController {
     content: HTMLElement;
@@ -38,17 +39,12 @@ class UserController {
     }
 
     async UserLayout(): Promise<void> {
-        const users: UserType[] = await this.getUser();
+        const userService = new Service<User> ();
+        const users: User[] = await userService.getItems();
 
-        users.forEach((user: UserType) => {
+        users.forEach((user: User) => {
             this.content.innerHTML += this.createLine(user);
         });
-    }
-
-    async getUser(): Promise<UserType[]> {
-        const response = await fetch('http://localhost:5011/users');
-        const users: UserType[] = await response.json();
-        return users;
     }
 
     addEmployee(): void {
@@ -63,7 +59,7 @@ class UserController {
 
         const [fullName, register, admin, active, addressHome, addressWork] = formFields;
 
-        const user: UserType = {
+        const user: User = {
             fullName: (fullName as HTMLFormElement).value,
             register: (register as HTMLFormElement).value !== '' ? (register as HTMLFormElement).value : undefined,
             active: (active as HTMLFormElement).checked,
@@ -78,7 +74,7 @@ class UserController {
         register = Math.random().toString(36).substring(7).toUpperCase(),
         active,
         access
-    }: UserType, ...address: string[]): string {
+    }: User, ...address: string[]): string {
         return `
         <div class="card mb-1">
             <div class="card-header">
